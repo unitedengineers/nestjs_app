@@ -1,5 +1,4 @@
-export class AppEntity {
-  id!: number;
+export class CreateTestDto {
   name?: string;
   created_at: string;
 }
