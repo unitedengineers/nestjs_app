@@ -12,20 +12,12 @@ export class AuthController {
   @Post('signup')
   @HttpCode(201)
   signupUser(@Body() payload: UserDto): Promise<any> {
-    return this.authService.singupUser(payload);
+    return;
   }
 
   @Post('signin')
   @HttpCode(201)
   login(@Body() payload: UserDto): Promise<any> {
-    return this.authService.singupUser(payload);
-  }
-
-  @Get('confirm')
-  @HttpCode(201)
-  confirm(payload: any): Promise<void> {
-    console.log('payload: ', payload);
     return;
-    // return this.authService.singupUser(payload);
   }
 }

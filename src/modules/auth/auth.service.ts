@@ -6,7 +6,5 @@ import { UserDto } from './auth.dto';
 export class AuthService {
   constructor(private readonly authRepository: AuthRepository) {}
 
-  async singupUser(payload: UserDto): Promise<void> {
-    return this.authRepository.singupUser(payload);
-  }
+  async singupUser(payload: UserDto): Promise<void> {}
 }
