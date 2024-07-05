@@ -76,6 +76,5 @@ Nest is [MIT licensed](LICENSE).
 
 1. npm i -g @nestjs/cli
 2. npm install ------ to the repo
-3. npm install --save @nestjs/swagger
-4. npm run start:dev
-5. npm run format --- (To format all code)
+3. npm run start:dev
+4. npm run format --- (To format all code)

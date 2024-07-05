@@ -1,4 +1,3 @@
-import { supabase } from 'configs/database';
 import { TABLES } from 'common/constants/tables.enum';
 import { UserDto } from './auth.dto';
 
