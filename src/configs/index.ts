@@ -18,6 +18,7 @@ export const getDBConfig = (): TypeOrmModuleOptions => {
     database: getConfigKeyValue(AppConfigs.DB_NAME),
     entities: [__dirname + '/../**/*.entity{.ts,.js}'],
     synchronize: true, // Set to false in production
+    logger: 'simple-console',
   };
 
   return typeOrmConfig;

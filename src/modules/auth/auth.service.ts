@@ -1,10 +1,10 @@
 import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { AuthRepository } from './auth.repository';
-import { LoginDto, UserDto } from './auth.dto';
-import { User } from './auth.entity';
 import { hashPassword, verifyPassword } from 'common/utils';
+import { AuthRepository } from './auth.repository';
+import { UserDto, UserResponseDto } from './auth.dto';
+import { User } from './auth.entity';
 
 @Injectable()
 export class AuthService {
@@ -13,30 +13,35 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async singupUser(payload: UserDto): Promise<User> {
+  async singupUser(payload: UserDto): Promise<UserResponseDto> {
     const existingUser = await this.authRepository.findByEmail(payload.email);
     if (existingUser) {
       throw new ConflictException('User already exists');
     }
     payload.password = await hashPassword(payload.password);
-    return this.authRepository.createUser(payload);
+    const user: User = await this.authRepository.createUser(payload);
+    return {
+      ...user,
+      accessToken: this.jwtService.sign(payload),
+    };
   }
 
-  async validateUser(payload: UserDto): Promise<boolean> {
+  async validateUser(payload: UserDto): Promise<User> {
     const user = await this.authRepository.findByEmail(payload.email);
     const isValidUser = await verifyPassword(user.password, payload.password);
     if (user && isValidUser) {
-      return true;
+      return user;
     }
-    return false;
+    return null;
   }
 
-  async loginUser(payload: UserDto): Promise<LoginDto> {
-    const isValidUser: boolean = await this.validateUser(payload);
-    if (!isValidUser) {
+  async loginUser(payload: UserDto): Promise<UserResponseDto> {
+    const user: User = await this.validateUser(payload);
+    if (!user) {
       throw new UnauthorizedException('Invalid Credentials');
     }
     return {
+      ...user,
       accessToken: this.jwtService.sign(payload),
     };
   }

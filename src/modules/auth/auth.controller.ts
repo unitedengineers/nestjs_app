@@ -4,8 +4,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { Public } from 'common/decorrators';
 
 import { AuthService } from './auth.service';
-import { LoginDto, UserDto } from './auth.dto';
-import { User } from './auth.entity';
+import { UserDto, UserResponseDto } from './auth.dto';
 import { ROUTE_PATHS } from './auth.constants';
 
 @ApiTags(ROUTE_PATHS.auth)
@@ -16,14 +15,14 @@ export class AuthController {
   @Public()
   @Post('signup')
   @HttpCode(201)
-  signup(@Body() payload: UserDto): Promise<User> {
+  signup(@Body() payload: UserDto): Promise<UserResponseDto> {
     return this.authService.singupUser(payload);
   }
 
   @Public()
   @Post('signin')
   @HttpCode(201)
-  async login(@Body() payload: UserDto): Promise<LoginDto> {
+  async login(@Body() payload: UserDto): Promise<UserResponseDto> {
     return this.authService.loginUser(payload);
   }
 }
