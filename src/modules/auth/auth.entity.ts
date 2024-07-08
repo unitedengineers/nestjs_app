@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm';
-import * as bycrypt from 'bcrypt';
+import { TABLES } from 'common/constants';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity()
-export class Users {
+@Entity({ name: TABLES.USERS })
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,13 +11,4 @@ export class Users {
 
   @Column()
   password: string;
-  
-  @BeforeInsert()
-  async hashPassword(){
-    const saltOrRounds=10;
-    this.password = await bycrypt.hash(this.password, saltOrRounds);
-  }
-
-  
-
 }
