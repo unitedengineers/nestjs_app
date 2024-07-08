@@ -1,4 +1,3 @@
-import { TABLES } from 'common/constants/tables.enum';
 import { AppEntity } from './app.entity';
 import { CreateTestDto } from './app.dto';
 

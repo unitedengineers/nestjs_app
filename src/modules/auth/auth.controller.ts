@@ -1,7 +1,10 @@
 import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+
+import { Public } from 'common/decorrators';
+
 import { AuthService } from './auth.service';
-import { UserDto } from './auth.dto';
+import { UserDto, UserResponseDto } from './auth.dto';
 import { ROUTE_PATHS } from './auth.constants';
 
 @ApiTags(ROUTE_PATHS.auth)
@@ -9,15 +12,17 @@ import { ROUTE_PATHS } from './auth.constants';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @Public()
   @Post('signup')
   @HttpCode(201)
-  signupUser(@Body() payload: UserDto): Promise<any> {
-    return;
+  signup(@Body() payload: UserDto): Promise<UserResponseDto> {
+    return this.authService.singupUser(payload);
   }
 
+  @Public()
   @Post('signin')
   @HttpCode(201)
-  login(@Body() payload: UserDto): Promise<any> {
-    return;
+  async login(@Body() payload: UserDto): Promise<UserResponseDto> {
+    return this.authService.loginUser(payload);
   }
 }
