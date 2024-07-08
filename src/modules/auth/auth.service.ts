@@ -1,10 +1,10 @@
 import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
-import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
 import { AuthRepository } from './auth.repository';
 import { LoginDto, UserDto } from './auth.dto';
 import { User } from './auth.entity';
+import { hashPassword, verifyPassword } from 'common/utils';
 
 @Injectable()
 export class AuthService {
@@ -18,22 +18,22 @@ export class AuthService {
     if (existingUser) {
       throw new ConflictException('User already exists');
     }
-    payload.password = await bcrypt.hash(payload.password, 10);
+    payload.password = await hashPassword(payload.password);
     return this.authRepository.createUser(payload);
   }
 
-  async validateUser(payload: UserDto): Promise<any> {
+  async validateUser(payload: UserDto): Promise<boolean> {
     const user = await this.authRepository.findByEmail(payload.email);
-    if (user && (await bcrypt.compare(payload.password, user.password))) {
-      const { password, ...result } = user;
-      return result;
+    const isValidUser = await verifyPassword(user.password, payload.password);
+    if (user && isValidUser) {
+      return true;
     }
-    return null;
+    return false;
   }
 
   async loginUser(payload: UserDto): Promise<LoginDto> {
-    const user = await this.validateUser(payload);
-    if (!user) {
+    const isValidUser: boolean = await this.validateUser(payload);
+    if (!isValidUser) {
       throw new UnauthorizedException('Invalid Credentials');
     }
     return {
