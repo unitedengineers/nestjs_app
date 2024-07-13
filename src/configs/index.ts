@@ -19,6 +19,7 @@ export const getDBConfig = (): TypeOrmModuleOptions => {
     entities: [__dirname + '/../**/*.entity{.ts,.js}'],
     synchronize: true, // Set to false in production
     logger: 'simple-console',
+    logging: true,
   };
 
   return typeOrmConfig;

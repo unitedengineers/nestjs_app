@@ -1,10 +1,11 @@
-import { Module, NestModule } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 
 import { AuthGuard } from 'common/guards/auth.guards';
 import { getDBConfig } from 'configs/index';
 import { AuthModule } from 'modules/auth/auth.module';
+import { LoggingMiddleware } from 'common/middlewares';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -16,5 +17,7 @@ import { AppRepository } from './app.repository';
   providers: [AppService, AppRepository, { provide: APP_GUARD, useClass: AuthGuard }],
 })
 export class AppModule implements NestModule {
-  public configure(): void {}
+  public configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggingMiddleware);
+  }
 }
