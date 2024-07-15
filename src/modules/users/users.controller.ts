@@ -18,7 +18,7 @@ export class UsersController {
   @Public()
   @Post('filter')
   @HttpCode(HttpStatus.OK)
-  async getByEmail(@Body() payload: UserDto): Promise<UserResponseDto>{
+  async getByEmail(@Body() payload: UserDto): Promise<UserResponseDto| any>{
     const email = payload.email;
     if (email) {
       // return Promise.resolve('Success');
