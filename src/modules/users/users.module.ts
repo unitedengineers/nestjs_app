@@ -5,10 +5,9 @@ import { JwtModule } from '@nestjs/jwt';
 import { getConfigKeyValue } from 'configs/index';
 import { AppConfigs } from 'configs/appConfigs.enum';
 
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
-import { AuthRepository } from './auth.repository';
-import { User } from 'modules/users/users.entity';
+import { UsersController } from './users.controller';
+import { UsersService } from './users.service';
+import { User } from './users.entity';
 
 @Module({
   imports: [
@@ -19,7 +18,7 @@ import { User } from 'modules/users/users.entity';
       signOptions: { expiresIn: '60m' },
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService, AuthRepository],
+  controllers: [UsersController],
+  providers: [UsersService],
 })
-export class AuthModule {}
+export class UsersModule {}
