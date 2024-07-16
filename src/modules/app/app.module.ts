@@ -8,6 +8,7 @@ import { getConfigKeyValue, getDBConfig } from 'configs/index';
 import { AuthModule } from 'modules/auth/auth.module';
 import { UsersModule } from 'modules/users/users.module';
 import { LoggingMiddleware } from 'common/middlewares';
+import { CategoriesModule } from 'modules/categories/categories.module';
 import { AppConfigs } from 'configs/appConfigs.enum';
 
 import { AppController } from './app.controller';
@@ -22,6 +23,7 @@ import { AppController } from './app.controller';
     }),
     AuthModule,
     UsersModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [{ provide: APP_GUARD, useClass: AuthGuard }],
