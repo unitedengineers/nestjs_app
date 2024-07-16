@@ -1,5 +1,5 @@
-import { User } from './auth.entity';
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import { User } from 'modules/users/users.entity';
 export class UserDto {
   @IsEmail()
   @IsNotEmpty()

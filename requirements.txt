@@ -1,0 +1,21 @@
+DB:
+- category	carpenter
+    - sub_category type: category_id, quantity, name, description, type,  length, width
+- quotation_created
+    - quotation_received. qoutation_id. status. pricing. received_by
+    - quotation_received. qoutation_id. status. pricing. received_by
+    - quotation_received. qoutation_id. status. pricing. received_by
+    - quotation_received. qoutation_id. status. pricing. received_by
+
+
+
+
+Vision:
+
+1. Calculated based on our db and algorithm:
+        name: 'Bed',
+        dimensions: 'length*width*depth(optional)', // user input
+        // TOBE Calc
+        sqft: '35',
+        materialDetails: 'screw, hinges, ply, laminate etc.' // quality & quantity
+2. 

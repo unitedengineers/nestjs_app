@@ -5,9 +5,9 @@ import { JwtModule } from '@nestjs/jwt';
 import { getConfigKeyValue } from 'configs/index';
 import { AppConfigs } from 'configs/appConfigs.enum';
 
-import { User } from '../auth/auth.entity';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
+import { User } from './users.entity';
 
 @Module({
   imports: [

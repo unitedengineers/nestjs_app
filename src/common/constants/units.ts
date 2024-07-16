@@ -278,6 +278,10 @@ export const units = [
       },
       {
         name: 'Bed',
+        dimensions: 'length*width*depth(optional)', // user input
+        // TOBE Calculated:
+        sqft: '35',
+        materialDetails: 'screw, hinges, ply, laminate etc.' // quality & quantity
       },
       {
         name: 'Hydrolic Bed',
