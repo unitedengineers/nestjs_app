@@ -200,7 +200,7 @@ export const units = [
     ],
   },
   {
-    name: 'Tiles',
+    name: 'Tiling',
     types: [
       {
         name: 'Floor Tile Fiting',
@@ -278,10 +278,9 @@ export const units = [
       },
       {
         name: 'Bed',
-        dimensions: 'length*width*depth(optional)', // user input
-        // TOBE Calculated:
-        sqft: '35',
-        materialDetails: 'screw, hinges, ply, laminate etc.' // quality & quantity
+      },
+      {
+        name: 'Drawer Bed',
       },
       {
         name: 'Hydrolic Bed',
@@ -317,6 +316,14 @@ export const units = [
       },
       {
         name: 'Window Grill',
+      },
+    ],
+  },
+  {
+    name: 'P.O.P',
+    types: [
+      {
+        name: 'P.O.P Fiting',
       },
     ],
   },

@@ -1,5 +1,5 @@
-import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { Body, Controller, HttpCode, Post } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 import { Public } from 'common/decorrators';
 
@@ -9,6 +9,7 @@ import { ROUTE_PATHS } from './auth.constants';
 
 @ApiTags(ROUTE_PATHS.auth)
 @Controller(ROUTE_PATHS.auth)
+@ApiBearerAuth()
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 

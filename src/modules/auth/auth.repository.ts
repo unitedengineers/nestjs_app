@@ -1,4 +1,3 @@
-import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDto } from './auth.dto';
 import { Repository } from 'typeorm';
