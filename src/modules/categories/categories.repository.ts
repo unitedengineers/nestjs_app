@@ -1,8 +1,7 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Categories } from './categories.entity';
-import { units } from 'common/constants/units';
+import { Categories } from './entities/categories.entity';
 
 export class CategoriesRepository {
   constructor(
@@ -10,17 +9,9 @@ export class CategoriesRepository {
     private readonly categoriesRepository: Repository<Categories>,
   ) {}
 
-  async save(): Promise<void> {
-    const newCategories = this.categoriesRepository.create(
-      units.map((unit) => ({
-        name: unit.name,
-      })),
-    );
-    console.log('newCategories: ', newCategories);
-    await this.categoriesRepository.save(newCategories);
-  }
-
   async getCategories(): Promise<Categories[]> {
-    return this.categoriesRepository.find();
+    return this.categoriesRepository.find({
+      relations: ['subCategories'],
+    });
   }
 }

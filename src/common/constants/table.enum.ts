@@ -1,5 +1,5 @@
 export enum TABLES {
   USERS = 'users',
   CATEGORIES = 'categories',
-  CATEGORY_TYPES = 'category_types',
+  SUB_CATEGORIES = 'sub_categories',
 }
