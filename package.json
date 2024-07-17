@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "main": "dist/main.js",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -38,7 +39,13 @@
     "pg": "^8.12.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "module-alias": "^2.1.0"
+  },
+  "_moduleAliases": {
+    "commons": "dist/commons",
+    "configs": "dist/configs",
+    "modules": "dist/modules"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
