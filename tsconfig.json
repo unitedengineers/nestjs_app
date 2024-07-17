@@ -10,7 +10,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true,
+    "incremental": false,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
@@ -23,5 +23,5 @@
       "modules/*": ["src/modules/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/*"]
 }
