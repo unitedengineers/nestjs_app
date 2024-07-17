@@ -8,6 +8,7 @@ export class LoggingMiddleware implements NestMiddleware {
     const message = `${method} ${path}`;
 
     Logger.log(message, 'IncomingRequest');
+    console.log('message', message);
 
     res.on('finish', () => {
       const { statusCode } = res;
