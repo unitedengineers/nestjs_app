@@ -115,12 +115,6 @@ export const units = [
         name: 'LED Light',
       },
       {
-        name: 'LED Light',
-      },
-      {
-        name: 'Chandelier',
-      },
-      {
         name: 'Chandelier',
       },
       {
@@ -139,7 +133,7 @@ export const units = [
         name: 'TV I/U',
       },
       {
-        name: 'Wiring/M',
+        name: 'Wiring/Meter',
       },
       {
         name: 'MCB Trip',
@@ -224,6 +218,7 @@ export const units = [
     types: [
       {
         name: 'Drawer Installtion',
+        type: 'DIMENSION',
       },
       {
         name: 'Drawer Channels',
@@ -233,6 +228,7 @@ export const units = [
       },
       {
         name: 'Door Installation',
+        type: 'DIMENSION',
       },
       {
         name: 'Door Lock',
@@ -248,60 +244,78 @@ export const units = [
       },
       {
         name: 'Glass Shelf',
+        type: 'DIMENSION',
       },
       {
         name: 'Cupboard With Sliding Doors',
+        type: 'DIMENSION',
       },
       {
         name: 'Cupboard With Opening Doors',
+        type: 'DIMENSION',
       },
       {
         name: 'Wooden Shelf',
+        type: 'DIMENSION',
       },
       {
         name: 'TV Unit',
+        type: 'DIMENSION',
       },
       {
         name: 'Minor Installations',
       },
       {
         name: 'Dining Table',
+        type: 'DIMENSION',
       },
       {
         name: 'Table',
+        type: 'DIMENSION',
       },
       {
         name: 'Study Table',
+        type: 'DIMENSION',
       },
       {
         name: 'Curtain Pallments',
+        type: 'DIMENSION',
       },
       {
         name: 'Bed',
+        type: 'DIMENSION',
       },
       {
         name: 'Drawer Bed',
+        type: 'DIMENSION',
       },
       {
         name: 'Hydrolic Bed',
+        type: 'DIMENSION',
       },
       {
         name: 'Kitchen Trolleys',
+        type: 'DIMENSION',
       },
       {
         name: 'Hall Seating',
+        type: 'DIMENSION',
       },
       {
         name: 'Hall Sofa',
+        type: 'DIMENSION',
       },
       {
         name: 'Lobby Furniture',
+        type: 'DIMENSION',
       },
       {
         name: 'Shoe Rack',
+        type: 'DIMENSION',
       },
       {
         name: 'Framing',
+        type: 'DIMENSION',
       },
     ],
   },
