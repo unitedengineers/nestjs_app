@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 
-import { AuthGuard } from 'commons/guards';
+import { AuthGuard } from 'src/commons/guards';
 import { getConfigKeyValue, getDBConfig } from 'configs/index';
 import { AuthModule } from 'modules/auth/auth.module';
 import { UsersModule } from 'modules/users/users.module';
