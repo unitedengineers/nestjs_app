@@ -1,6 +1,6 @@
 import { Controller, Get, HttpCode, HttpStatus, Post, Body } from '@nestjs/common';
-import { UsersService } from "./users.service";
-import { Public } from 'common/decorrators';
+import { UsersService } from './users.service';
+import { Public } from 'commons/decorators';
 import { UserDto, UserResponseDto } from '../auth/auth.dto';
 // import { UserFilterDto } from './users.dto';
 // import { UserResponseDto } from 'modules/auth/auth.dto';
@@ -18,7 +18,7 @@ export class UsersController {
   @Public()
   @Post('filter')
   @HttpCode(HttpStatus.OK)
-  async getByEmail(@Body() payload: UserDto): Promise<UserResponseDto| any>{
+  async getByEmail(@Body() payload: UserDto): Promise<UserResponseDto | any> {
     const email = payload.email;
     if (email) {
       // return Promise.resolve('Success');
@@ -26,5 +26,4 @@ export class UsersController {
     }
     return Promise.resolve('Missing email');
   }
-
 }

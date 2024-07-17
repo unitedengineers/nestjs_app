@@ -1,7 +1,7 @@
 import { Optional } from '@nestjs/common';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
-import { TABLES } from 'common/constants';
+import { TABLES } from 'commons/constants';
 
 import { SubCategories } from './subCategories.entity';
 

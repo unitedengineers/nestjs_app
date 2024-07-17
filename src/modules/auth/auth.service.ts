@@ -1,7 +1,7 @@
 import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { hashPassword, verifyPassword } from 'common/utils';
+import { hashPassword, verifyPassword } from 'commons/utils';
 import { AuthRepository } from './auth.repository';
 import { UserDto, UserResponseDto } from './auth.dto';
 import { User } from 'modules/users/users.entity';

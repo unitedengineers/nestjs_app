@@ -3,11 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 
-import { AuthGuard } from 'common/guards';
+import { AuthGuard } from 'commons/guards';
 import { getConfigKeyValue, getDBConfig } from 'configs/index';
 import { AuthModule } from 'modules/auth/auth.module';
 import { UsersModule } from 'modules/users/users.module';
-import { LoggingMiddleware } from 'common/middlewares';
+import { LoggingMiddleware } from 'commons/middlewares';
 import { CategoriesModule } from 'modules/categories/categories.module';
 import { AppConfigs } from 'configs/appConfigs.enum';
 

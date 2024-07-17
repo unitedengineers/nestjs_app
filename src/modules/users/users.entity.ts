@@ -1,4 +1,4 @@
-import { TABLES } from 'common/constants';
+import { TABLES } from 'commons/constants';
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity({ name: TABLES.USERS })
