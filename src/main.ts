@@ -1,7 +1,8 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './modules/app/app.module';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
+
+import { AppModule } from './modules/app/app.module';
 
 const injectSwagger = (app) => {
   const config = new DocumentBuilder()
