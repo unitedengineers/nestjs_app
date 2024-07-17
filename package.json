@@ -79,8 +79,8 @@
     "testEnvironment": "node"
   },
   "_moduleAliases": {
-    "coomons": "src/commons",
-    "configs": "src/configs",
-    "modules": "src/modules"
+    "commons": "var/task/src/commons",
+    "configs": "var/task/src/configs",
+    "modules": "var/tas/src/modules"
   }
 }
