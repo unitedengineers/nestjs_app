@@ -5,6 +5,5 @@
     "plugins": ["@nestjs/swagger"],
     "tsConfigPath": "tsconfig.json",
     "deleteOutDir": true
-  },
-  "entryFile": "main.js"
+  }
 }
