@@ -5,12 +5,11 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "main": "dist/main.js",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "nest start --watch --exec node -r tsconfig-paths/register -r ts-node/register ./src/main.ts",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -34,18 +33,8 @@
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1",
     "pg": "^8.12.0",
-    "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1",
-    "typeorm": "^0.3.20",
-    "module-alias": "^2.1.0"
-  },
-  "_moduleAliases": {
-    "commons": "dist/commons",
-    "configs": "dist/configs",
-    "modules": "dist/modules"
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -55,7 +44,6 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.14.10",
-    "@types/passport-jwt": "^4.0.1",
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",

@@ -22,7 +22,7 @@
       "commons/*": ["./src/commons/*"],
       "configs/*": ["./src/configs/*"],
       "modules/*": ["./src/modules/*"]
-    }
+    },
   },
   "include": ["src/*"]
 }
