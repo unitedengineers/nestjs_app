@@ -1,5 +1,6 @@
-import { TABLES } from 'commons/constants';
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+import { TABLES } from '../../commons/constants';
 
 @Entity({ name: TABLES.USERS })
 export class User {

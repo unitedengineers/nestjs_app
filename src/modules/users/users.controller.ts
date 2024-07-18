@@ -1,9 +1,8 @@
 import { Controller, Get, HttpCode, HttpStatus, Post, Body } from '@nestjs/common';
+
 import { UsersService } from './users.service';
-import { Public } from 'commons/decorators';
+import { Public } from '../../commons/decorators';
 import { UserDto, UserResponseDto } from '../auth/auth.dto';
-// import { UserFilterDto } from './users.dto';
-// import { UserResponseDto } from 'modules/auth/auth.dto';
 
 @Controller('users')
 export class UsersController {

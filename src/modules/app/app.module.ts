@@ -3,13 +3,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 
-import { AuthGuard } from 'commons/guards';
-import { getConfigKeyValue, getDBConfig } from 'configs/index';
-import { AuthModule } from 'modules/auth/auth.module';
-import { UsersModule } from 'modules/users/users.module';
-import { LoggingMiddleware } from 'commons/middlewares';
-import { CategoriesModule } from 'modules/categories/categories.module';
-import { AppConfigs } from 'configs/appConfigs.enum';
+import { AuthGuard } from '../../commons/guards';
+import { getConfigKeyValue, getDBConfig } from '../../configs/index';
+import { AuthModule } from '../auth/auth.module';
+import { UsersModule } from '../users/users.module';
+import { LoggingMiddleware } from '../../commons/middlewares';
+import { CategoriesModule } from '../categories/categories.module';
+import { AppConfigs } from '../../configs/appConfigs.enum';
 
 import { AppController } from './app.controller';
 

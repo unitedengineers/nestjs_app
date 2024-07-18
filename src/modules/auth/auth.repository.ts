@@ -1,7 +1,7 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDto } from './auth.dto';
 import { Repository } from 'typeorm';
-import { User } from 'modules/users/users.entity';
+import { User } from '../users/users.entity';
 
 export class AuthRepository {
   constructor(
